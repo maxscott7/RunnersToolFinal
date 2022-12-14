@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         trackBtn.setOnClickListener {
+            val intent = Intent(this, TrackActivity::class.java)
+            startActivity(intent)
         }
 
         trainingBtn.setOnClickListener {

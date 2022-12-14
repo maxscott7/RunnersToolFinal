@@ -80,7 +80,7 @@ class AddEditNoteActivity : AppCompatActivity() {
                 }
             }
             // opening the new activity on below line
-            startActivity(Intent(applicationContext, MainActivity::class.java))
+            startActivity(Intent(applicationContext, TrainingActivity::class.java))
             this.finish()
         }
     }
