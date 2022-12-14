@@ -15,13 +15,13 @@
         android:layout_margin="4dp">
 
         <TextView
-            android:id="@+id/idTVNote"
+            android:id="@+id/idTVlog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:layout_toLeftOf="@id/idIVDelete"
             android:padding="4dp"
-            android:text="Note"
+            android:text="log"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
@@ -29,7 +29,7 @@
             android:id="@+id/idTVDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/idTVNote"
+            android:layout_below="@id/idTVlog"
             android:layout_margin="3dp"
             android:layout_toLeftOf="@id/idIVDelete"
             android:padding="4dp"

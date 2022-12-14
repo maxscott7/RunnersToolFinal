@@ -8,18 +8,18 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class NoteRVAdapter(
+class logRVAdapter(
     val context: Context,
-    val noteClickDeleteInterface: NoteClickDeleteInterface,
-    val noteClickInterface: NoteClickInterface
+    val logClickDeleteInterface: logClickDeleteInterface,
+    val logClickInterface: logClickInterface
 ) :
-    RecyclerView.Adapter<NoteRVAdapter.ViewHolder>() {
+    RecyclerView.Adapter<logRVAdapter.ViewHolder>() {
 
     private val allLogs = ArrayList<Log>()
 
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val noteTV = itemView.findViewById<TextView>(R.id.idTVNote)
+        val logTV = itemView.findViewById<TextView>(R.id.idTVlog)
         val dateTV = itemView.findViewById<TextView>(R.id.idTVDate)
         val deleteIV = itemView.findViewById<ImageView>(R.id.idIVDelete)
     }
@@ -33,14 +33,14 @@ class NoteRVAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.noteTV.setText(allLogs.get(position).noteTitle)
+        holder.logTV.setText(allLogs.get(position).logTitle)
         holder.dateTV.setText("Last Updated : " + allLogs.get(position).timeStamp)
         holder.deleteIV.setOnClickListener {
-            noteClickDeleteInterface.onDeleteIconClick(allLogs.get(position))
+            logClickDeleteInterface.onDeleteIconClick(allLogs.get(position))
         }
 
         holder.itemView.setOnClickListener {
-            noteClickInterface.onNoteClick(allLogs.get(position))
+            logClickInterface.onlogClick(allLogs.get(position))
         }
     }
 
@@ -55,10 +55,10 @@ class NoteRVAdapter(
     }
 }
 
-interface NoteClickDeleteInterface {
+interface logClickDeleteInterface {
     fun onDeleteIconClick(log: Log)
 }
 
-interface NoteClickInterface {
-    fun onNoteClick(log: Log)
+interface logClickInterface {
+    fun onlogClick(log: Log)
 }

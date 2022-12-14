@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".TrainingActivity">
 
-    <!--recycler view for displaying all notes-->
+    <!--recycler view for displaying all logs-->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/notesRV"
+        android:id="@+id/logsRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"

@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 class LogRepository(private val trainingLogDao: TrainingLogDao) {
 
     // on below line we are creating a variable for our list
-    // and we are getting all the notes from our DAO class.
-    val allNotes: LiveData<List<Log>> = trainingLogDao.getAllNotes()
+    // and we are getting all the logs from our DAO class.
+    val alllogs: LiveData<List<Log>> = trainingLogDao.getAlllogs()
 
     // on below line we are creating an insert method
     // for adding the log to our database.

@@ -5,10 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
+import android.widget.*
 
 class AltitudeActivity : AppCompatActivity() {
 
@@ -19,19 +16,21 @@ class AltitudeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_altitude)
 
-        val spinner = findViewById<Spinner>(R.id.spinnerD)
-        val arrayAdapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item, distance)
-        spinner.adapter = arrayAdapter
-        spinner.onItemSelectedListener = object :
-            AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                TODO("Not yet implemented")
-            }
+        val mins: EditText = findViewById(R.id.minutes)
+        val sec: EditText = findViewById(R.id.seconds)
+        val altitude: EditText = findViewById(R.id.altitude)
+        val result: TextView = findViewById(R.id.altProduct)
+        val calculateAlt: Button = findViewById(R.id.altCalculate)
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
-            }
+        calculateAlt.setOnClickListener {
+            val total = ((mins.text.toString().toInt() * 60) + sec.text.toString().toInt()) - (altitude.text.toString().toInt() / 500)
+            result.visibility = View.VISIBLE
+            result.setText(total.toString() + " seconds")
+        }
 
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 

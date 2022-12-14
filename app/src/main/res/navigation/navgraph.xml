@@ -23,13 +23,14 @@
     <activity
         android:id="@+id/addLogActivity"
         android:name="com.example.runnerstoolfinal.AddLogActivity"
-        android:label="activity_add_edit_note"
+        android:label="activity_add_edit_log"
         tools:layout="@layout/activity_add_edit_log" />
     <activity
         android:id="@+id/mainActivity4"
         android:name="com.example.runnerstoolfinal.MainActivity"
         android:label="activity_main"
-        tools:layout="@layout/activity_main" />
+        tools:layout="@layout/activity_main"
+        />
     <activity
         android:id="@+id/altitudeActivity2"
         android:name="com.example.runnerstoolfinal.AltitudeActivity"

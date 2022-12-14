@@ -7,18 +7,18 @@
     tools:context=".AddLogActivity">
 
     <EditText
-        android:id="@+id/idEdtNoteName"
+        android:id="@+id/idEdtlogName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Enter Date or Title" />
 
     <EditText
-        android:id="@+id/idEdtNoteDesc"
+        android:id="@+id/idEdtlogDesc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/idBtn"
-        android:layout_below="@id/idEdtNoteName"
+        android:layout_below="@id/idEdtlogName"
         android:layout_margin="10dp"
         android:gravity="start|top"
         android:hint="Enter your Training Details"

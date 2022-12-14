@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 @Database(entities = arrayOf(Log::class), version = 1, exportSchema = false)
 abstract class LogDatabase : RoomDatabase() {
 
-    abstract fun getNotesDao(): TrainingLogDao
+    abstract fun getlogsDao(): TrainingLogDao
 
     companion object {
         // Singleton prevents multiple
@@ -24,7 +24,7 @@ abstract class LogDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     LogDatabase::class.java,
-                    "note_database"
+                    "log_database"
                 ).build()
                 INSTANCE = instance
                 // return instance

@@ -7,22 +7,22 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class NoteViewModal (application: Application) :AndroidViewModel(application) {
+class logViewModal (application: Application) :AndroidViewModel(application) {
 
-    val allNotes : LiveData<List<Log>>
+    val alllogs : LiveData<List<Log>>
     val repository : LogRepository
 
     init {
-        val dao = LogDatabase.getDatabase(application).getNotesDao()
+        val dao = LogDatabase.getDatabase(application).getlogsDao()
         repository = LogRepository(dao)
-        allNotes = repository.allNotes
+        alllogs = repository.alllogs
     }
 
-    fun deleteNote (log: Log) = viewModelScope.launch(Dispatchers.IO) {
+    fun deletelog (log: Log) = viewModelScope.launch(Dispatchers.IO) {
         repository.delete(log)
     }
 
-    fun updateNote(log: Log) = viewModelScope.launch(Dispatchers.IO) {
+    fun updatelog(log: Log) = viewModelScope.launch(Dispatchers.IO) {
         repository.update(log)
     }
 

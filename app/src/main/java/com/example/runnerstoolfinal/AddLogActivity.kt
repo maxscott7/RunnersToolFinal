@@ -11,75 +11,60 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class AddLogActivity : AppCompatActivity() {
-    // on below line we are creating
-    // variables for our UI components.
-    lateinit var noteTitleEdt: EditText
-    lateinit var noteEdt: EditText
-    lateinit var saveBtn: Button
 
-    // on below line we are creating variable for
-    // viewmodal and and integer for our note id.
-    lateinit var viewModal: NoteViewModal
-    var noteID = -1;
+    lateinit var logTitleEdt: EditText
+    lateinit var logEdt: EditText
+    lateinit var saveBtn: Button
+    lateinit var viewModal: logViewModal
+    var logID = -1;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_edit_log)
 
-        // on below line we are initialing our view modal.
         viewModal = ViewModelProvider(
             this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
-        ).get(NoteViewModal::class.java)
+        ).get(logViewModal::class.java)
 
-        // on below line we are initializing all our variables.
-        noteTitleEdt = findViewById(R.id.idEdtNoteName)
-        noteEdt = findViewById(R.id.idEdtNoteDesc)
+        logTitleEdt = findViewById(R.id.idEdtlogName)
+        logEdt = findViewById(R.id.idEdtlogDesc)
         saveBtn = findViewById(R.id.idBtn)
 
-        // on below line we are getting data passed via an intent.
-        val noteType = intent.getStringExtra("noteType")
-        if (noteType.equals("Edit")) {
-            // on below line we are setting data to edit text.
-            val noteTitle = intent.getStringExtra("noteTitle")
-            val noteDescription = intent.getStringExtra("noteDescription")
-            noteID = intent.getIntExtra("noteId", -1)
+        val logType = intent.getStringExtra("logType")
+        if (logType.equals("Edit")) {
+            val logTitle = intent.getStringExtra("logTitle")
+            val logDescription = intent.getStringExtra("logDescription")
+            logID = intent.getIntExtra("logId", -1)
             saveBtn.setText("Update Log")
-            noteTitleEdt.setText(noteTitle)
-            noteEdt.setText(noteDescription)
+            logTitleEdt.setText(logTitle)
+            logEdt.setText(logDescription)
         } else {
             saveBtn.setText("Save Log")
         }
 
-        // on below line we are adding
-        // click listener to our save button.
         saveBtn.setOnClickListener {
-            // on below line we are getting
-            // title and desc from edit text.
-            val noteTitle = noteTitleEdt.text.toString()
-            val noteDescription = noteEdt.text.toString()
-            // on below line we are checking the type
-            // and then saving or updating the data.
-            if (noteType.equals("Edit")) {
-                if (noteTitle.isNotEmpty() && noteDescription.isNotEmpty()) {
+            val logTitle = logTitleEdt.text.toString()
+            val logDescription = logEdt.text.toString()
+
+            if (logType.equals("Edit")) {
+                if (logTitle.isNotEmpty() && logDescription.isNotEmpty()) {
                     val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
                     val currentDateAndTime: String = sdf.format(Date())
-                    val updatedLog = Log(noteTitle, noteDescription, currentDateAndTime)
-                    updatedLog.id = noteID
-                    viewModal.updateNote(updatedLog)
+                    val updatedLog = Log(logTitle, logDescription, currentDateAndTime)
+                    updatedLog.id = logID
+                    viewModal.updatelog(updatedLog)
                     Toast.makeText(this, "Log Updated..", Toast.LENGTH_LONG).show()
                 }
             } else {
-                if (noteTitle.isNotEmpty() && noteDescription.isNotEmpty()) {
+                if (logTitle.isNotEmpty() && logDescription.isNotEmpty()) {
                     val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
                     val currentDateAndTime: String = sdf.format(Date())
-                    // if the string is not empty we are calling a
-                    // add note method to add data to our room database.
-                    viewModal.addLog(Log(noteTitle, noteDescription, currentDateAndTime))
-                    Toast.makeText(this, "$noteTitle Added", Toast.LENGTH_LONG).show()
+                    viewModal.addLog(Log(logTitle, logDescription, currentDateAndTime))
+                    Toast.makeText(this, "$logTitle Added", Toast.LENGTH_LONG).show()
                 }
             }
-            // opening the new activity on below line
+
             startActivity(Intent(applicationContext, TrainingActivity::class.java))
             this.finish()
         }
