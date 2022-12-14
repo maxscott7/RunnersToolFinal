@@ -1,5 +1,6 @@
 package com.example.runnerstoolfinal
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils.replace
@@ -10,25 +11,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val treadFrag = treadmillFragment()
         val treadmillBtn: Button = findViewById(R.id.treadmillButton)
-        val trackFrag = trackFragment()
+        val altBtn: Button = findViewById(R.id.altButton)
         val trackBtn: Button = findViewById(R.id.trackButton)
+        val trainingBtn: Button = findViewById(R.id.trainingButton)
 
 
         treadmillBtn.setOnClickListener {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.treadmillFL, treadFrag)
-                commit()
-            }
+            val intent = Intent(this, TreadmillActivity::class.java)
+            startActivity(intent)
+        }
+
+        altBtn.setOnClickListener {
+            val intent = Intent(this, AltitudeActivity::class.java)
+            startActivity(intent)
         }
 
         trackBtn.setOnClickListener {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.treadmillFL, trackFrag)
-                commit()
-            }
-
         }
 
 

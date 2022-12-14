@@ -14,10 +14,20 @@
         android:layout_marginTop="44dp"
         android:text="Calculate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editMinutes" />
+        app:layout_constraintTop_toBottomOf="@+id/minutes" />
+
+    <Button
+        android:id="@+id/BackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="34dp"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editMinutes"
+        android:id="@+id/minutes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
@@ -29,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editSeconds"
+        android:id="@+id/seconds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="252dp"
@@ -45,7 +55,9 @@
         android:layout_width="269dp"
         android:layout_height="67dp"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="340dp"
+        android:textAlignment="center"
+        android:textSize="34sp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
