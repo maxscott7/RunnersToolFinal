@@ -43,11 +43,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/trackButton" />
 
-    <fragment
-        android:id=""
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+    <FrameLayout
+        android:id="@+id/treadmillFL"
+        android:name="com.example.runnerstoolfinal.treadmillFragment"
+        android:layout_width="376dp"
+        android:layout_height="392dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="59dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trainingButton"
+        tools:layout="@layout/fragment_treadmill" />
+
+    <FrameLayout
+        android:id="@+id/trackFL"
+        android:name="com.example.runnerstoolfinal.trackFragment"
+        android:layout_width="376dp"
+        android:layout_height="392dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="59dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trainingButton"
+        tools:layout="@layout/fragment_track" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
