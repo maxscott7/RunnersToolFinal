@@ -44,11 +44,11 @@ class AddEditNoteActivity : AppCompatActivity() {
             val noteTitle = intent.getStringExtra("noteTitle")
             val noteDescription = intent.getStringExtra("noteDescription")
             noteID = intent.getIntExtra("noteId", -1)
-            saveBtn.setText("Update Note")
+            saveBtn.setText("Update Log")
             noteTitleEdt.setText(noteTitle)
             noteEdt.setText(noteDescription)
         } else {
-            saveBtn.setText("Save Note")
+            saveBtn.setText("Save Log")
         }
 
         // on below line we are adding
@@ -67,7 +67,7 @@ class AddEditNoteActivity : AppCompatActivity() {
                     val updatedNote = Note(noteTitle, noteDescription, currentDateAndTime)
                     updatedNote.id = noteID
                     viewModal.updateNote(updatedNote)
-                    Toast.makeText(this, "Note Updated..", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Log Updated..", Toast.LENGTH_LONG).show()
                 }
             } else {
                 if (noteTitle.isNotEmpty() && noteDescription.isNotEmpty()) {
