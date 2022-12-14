@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/mainActivity4">
+
+    <activity
+        android:id="@+id/trackActivity"
+        android:name="com.example.runnerstoolfinal.TrackActivity"
+        android:label="activity_track"
+        tools:layout="@layout/activity_track" />
+    <activity
+        android:id="@+id/treadmillActivity"
+        android:name="com.example.runnerstoolfinal.TreadmillActivity"
+        android:label="activity_treadmill"
+        tools:layout="@layout/activity_treadmill" />
+    <activity
+        android:id="@+id/trainingActivity"
+        android:name="com.example.runnerstoolfinal.TrainingActivity"
+        android:label="activity_training"
+        tools:layout="@layout/activity_training" />
+    <activity
+        android:id="@+id/addLogActivity"
+        android:name="com.example.runnerstoolfinal.AddLogActivity"
+        android:label="activity_add_edit_note"
+        tools:layout="@layout/activity_add_edit_log" />
+    <activity
+        android:id="@+id/mainActivity4"
+        android:name="com.example.runnerstoolfinal.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/altitudeActivity2"
+        android:name="com.example.runnerstoolfinal.AltitudeActivity"
+        android:label="activity_altitude"
+        tools:layout="@layout/activity_altitude" />
+</navigation>

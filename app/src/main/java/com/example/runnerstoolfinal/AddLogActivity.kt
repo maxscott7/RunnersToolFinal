@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AddEditNoteActivity : AppCompatActivity() {
+class AddLogActivity : AppCompatActivity() {
     // on below line we are creating
     // variables for our UI components.
     lateinit var noteTitleEdt: EditText
@@ -24,7 +24,7 @@ class AddEditNoteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_edit_note)
+        setContentView(R.layout.activity_add_edit_log)
 
         // on below line we are initialing our view modal.
         viewModal = ViewModelProvider(
@@ -64,9 +64,9 @@ class AddEditNoteActivity : AppCompatActivity() {
                 if (noteTitle.isNotEmpty() && noteDescription.isNotEmpty()) {
                     val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
                     val currentDateAndTime: String = sdf.format(Date())
-                    val updatedNote = Note(noteTitle, noteDescription, currentDateAndTime)
-                    updatedNote.id = noteID
-                    viewModal.updateNote(updatedNote)
+                    val updatedLog = Log(noteTitle, noteDescription, currentDateAndTime)
+                    updatedLog.id = noteID
+                    viewModal.updateNote(updatedLog)
                     Toast.makeText(this, "Log Updated..", Toast.LENGTH_LONG).show()
                 }
             } else {
@@ -75,7 +75,7 @@ class AddEditNoteActivity : AppCompatActivity() {
                     val currentDateAndTime: String = sdf.format(Date())
                     // if the string is not empty we are calling a
                     // add note method to add data to our room database.
-                    viewModal.addNote(Note(noteTitle, noteDescription, currentDateAndTime))
+                    viewModal.addLog(Log(noteTitle, noteDescription, currentDateAndTime))
                     Toast.makeText(this, "$noteTitle Added", Toast.LENGTH_LONG).show()
                 }
             }
