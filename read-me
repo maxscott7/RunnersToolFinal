@@ -1,0 +1,6 @@
+This is my final project for my mobile app development class.  The app features 3 calculators for converting common metrics that all collegiete runners and most runners
+use on an almost daily basis.  It also features a section for keeping track of training with a notepad sorting notes by date.  This can be used as a training log,
+and through the help of room it is able to store the notes on the device for later use meaning the app will always save the notes.
+
+A few references I used to help build the project include this youtube video series for setting up the room database https://www.youtube.com/watch?v=JGcsIY7flUw
+This video helped me to organize my project in the correct way while still maintaining my own work and differences with look and feel.
